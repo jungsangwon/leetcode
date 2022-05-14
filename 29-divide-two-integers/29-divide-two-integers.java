@@ -15,7 +15,6 @@ class Solution {
         if(dvd<dvs){
             return 0;
         }
-        System.out.println(dvd + " " +dvs);
         while(dvd>=dvs){
             while(dvd<check){
                 check -= dvs;

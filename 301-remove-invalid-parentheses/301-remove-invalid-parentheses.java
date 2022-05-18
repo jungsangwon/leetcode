@@ -13,7 +13,6 @@ class Solution {
             }
             
             for (int i = 0; i < curr.length(); i++) {
-                
                 char ichar = curr.charAt(i);
                 if (ichar != '(' && ichar != ')') {
                     continue;

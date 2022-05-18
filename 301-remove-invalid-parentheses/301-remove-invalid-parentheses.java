@@ -6,7 +6,6 @@ class Solution {
         
         List<String> ans = new ArrayList<>();
         while (!q.isEmpty()) {
-            
             String curr = q.poll();
             if (this.valid(curr)) {
                 ans.add(curr);

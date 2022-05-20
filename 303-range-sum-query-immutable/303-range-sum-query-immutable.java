@@ -9,7 +9,6 @@ class NumArray {
             sum[i+1]=sum[i] + nums[i];
         }
     }
-    
     public int sumRange(int left, int right) {
         return sum[right+1]-sum[left];
     }

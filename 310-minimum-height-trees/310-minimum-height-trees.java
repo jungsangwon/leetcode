@@ -14,8 +14,9 @@ class Solution {
         int[] ind = new int[n];
         ArrayList<ArrayList<Integer>> list = adjList(edges,n,ind);
         List<Integer> res = new ArrayList<>();
-        if(n<=0)return res;
-        if(n==1){
+        if(n<=0){
+            return res;
+        }else if(n==1){
             res.add(0);
             return res;
         }

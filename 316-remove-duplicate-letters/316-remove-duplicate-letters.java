@@ -25,7 +25,6 @@ class Solution {
 	while (!stk.isEmpty()) {
 		sb.append(stk.pop());
 	}
-
 	return sb.reverse().toString();
     }
 }

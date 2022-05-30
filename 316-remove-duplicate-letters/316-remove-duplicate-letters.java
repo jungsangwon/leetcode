@@ -10,7 +10,6 @@ class Solution {
 	boolean[] visited = new boolean[26];
 
 	for (char ch : s.toCharArray()) {
-
 		count[ch-'a']--;
 		if (visited[ch-'a']) {
 			continue;

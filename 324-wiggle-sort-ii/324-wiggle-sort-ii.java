@@ -1,14 +1,24 @@
 class Solution {
     public void wiggleSort(int[] nums) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
-        for(int i=0; i<nums.length; i++){
-            pq.add(nums[i]);
+        int[] count = new int[5001];
+        for (int num : nums){
+            count[num]++;
         }
-        for(int i = 1; i<nums.length; i+=2){
-            nums[i] = pq.poll();
-        }
-        for(int i=0; i<nums.length; i+=2){
-            nums[i] = pq.poll();
+        int idx = -1;
+        int check = 0;
+        for (int val = 5000; val >= 0; val--) {
+            while (count[val] > 0) {
+                idx+=2;
+                if(idx >= nums.length){
+                    idx = 0;
+                }
+                nums[idx] = val;
+                count[val]--;
+                check++;
+                if (check == nums.length){
+                    return;
+                }
+            }
         }
     }
 }

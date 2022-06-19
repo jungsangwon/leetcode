@@ -20,13 +20,11 @@ class Solution {
         }
         
         int result = Integer.MAX_VALUE;
-        int root = -1;
         for(int i = right-1; i>left; i--){
             int leftSum = getMoneyAmount(left,i-1,dp);
             int rightSum = getMoneyAmount(i+1,right,dp);
             int sum = i + Math.max(leftSum,rightSum);
             if(sum<result){
-                root = i;
                 result = sum;
             }
         }

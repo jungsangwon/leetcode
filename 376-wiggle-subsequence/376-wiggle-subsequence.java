@@ -1,36 +1,17 @@
 class Solution {
     public int wiggleMaxLength(int[] nums) {
-        int result = 0;
-        int dp[][] = new int[nums.length][2];
-        for(int i=0; i<nums.length;i++){
-            Arrays.fill(dp[i],-1);
+        if(nums.length==0){
+            return 0;
         }
-        for(int i=0;i<nums.length;i++){
-            result = Math.max(result,wiggleMaxLength(nums,i,0,dp)+1);
-            result = Math.max(result,wiggleMaxLength(nums,i,1,dp)+1);
-        }
-        return result;
-    }
-    
-    public int wiggleMaxLength(int[] nums, int idx, int big, int dp[][]){
-        int result = 0;
-        if(dp[idx][big]!=-1){
-            return dp[idx][big];
-        }
-        if(big==0){
-            for(int i=idx+1;i<nums.length; i++){
-                if(nums[idx]<nums[i]){
-                    result = Math.max(result,wiggleMaxLength(nums,i,1,dp)+1);
-                }
-            }
-        }else{
-            for(int i=idx+1;i<nums.length;i++){
-                if(nums[idx]>nums[i]){
-                    result = Math.max(result,wiggleMaxLength(nums,i,0,dp)+1);
-                }
+        int up = 1;
+        int down = 1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]>nums[i-1]){
+                up = down+1;
+            }else if(nums[i]<nums[i-1]){
+                down = up+1;
             }
         }
-        dp[idx][big] = result;
-        return result;
+        return Math.max(up,down);
     }
 }

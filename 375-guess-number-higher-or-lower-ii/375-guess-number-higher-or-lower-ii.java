@@ -37,7 +37,6 @@ class Solution {
                 result = sum;
             }
         }
-        // System.out.println(left+" -> "+right+" = "+root);
         dp[left][right] = result;
         return result;
     }

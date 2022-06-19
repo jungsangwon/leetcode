@@ -18,6 +18,7 @@ class Solution {
             dp[left][right] = left+1;
             return left + 1;
         }
+        
         int result = Integer.MAX_VALUE;
         int root = -1;
         for(int i = right-1; i>left; i--){

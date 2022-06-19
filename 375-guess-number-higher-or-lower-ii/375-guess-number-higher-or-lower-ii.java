@@ -16,6 +16,7 @@ class Solution {
             dp[left][right] = left+1;
             return left + 1;
         }
+        
         int result = Integer.MAX_VALUE;
         for(int i = right-1; i>left; i--){
             int leftSum = getMoneyAmount(left,i-1,dp);

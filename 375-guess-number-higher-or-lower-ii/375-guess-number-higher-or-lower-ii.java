@@ -1,9 +1,7 @@
 class Solution {
     public int getMoneyAmount(int n) {
         int result = Integer.MAX_VALUE;
-        int[][] dp = new int[n+1][n+1];
-        getMoneyAmount(1,n,dp);
-        return dp[1][n];
+        return getMoneyAmount(1,n,new int[n+1][n+1]);
     }
     
     public int getMoneyAmount(int left, int right, int[][] dp){

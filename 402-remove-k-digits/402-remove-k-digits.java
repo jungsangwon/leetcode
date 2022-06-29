@@ -9,6 +9,7 @@ class Solution {
             }
         }
         num = num.substring(idx);
+        
         if(num.length()==0 || num.length()<=k){
             return "0";
         }else if(k==0){

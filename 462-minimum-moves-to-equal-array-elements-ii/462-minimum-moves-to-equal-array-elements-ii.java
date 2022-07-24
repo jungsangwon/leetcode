@@ -1,13 +1,12 @@
 class Solution {
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);
-        int i = 0, j = nums.length-1;
-        int count = 0;
-        while(i < j){
-            count += nums[j]-nums[i];
-            i++;
-            j--;
+        int median = nums[nums.length /2];
+        int answer = 0;
+        for(int i=0;i<nums.length;i++){
+            answer += Math.abs(nums[i] - median);
         }
-        return count;
+    
+        return answer;
     }
 }

@@ -6,7 +6,6 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             answer += Math.abs(nums[i] - median);
         }
-    
         return answer;
     }
 }

@@ -12,7 +12,6 @@ class Solution {
         }
         for(int i=0; i<s2.length(); i++){
             int now = s2.charAt(i)-'a';
-            // System.out.println(s2.charAt(i)+" : "+sum);
             if(!check[now]){
                 while(start<=i){
                     int tmp = s2.charAt(start)-'a';

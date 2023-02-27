@@ -60,7 +60,6 @@ class Solution {
             complete[0]++;
             x_shape--;
         }
-        System.out.println(complete[0]+", "+complete[1]);
         
         if(complete[0]!=0&&complete[1]!=0){
             return false;

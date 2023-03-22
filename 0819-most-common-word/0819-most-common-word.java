@@ -1,11 +1,11 @@
 class Solution {
     public String mostCommonWord(String paragraph, String[] banned) {
         paragraph = paragraph.replaceAll("[^a-zA-Z\s]"," ");
+        paragraph = paragraph.toLowerCase();
         HashMap<String,Integer> count = new HashMap<>();
         String[] words = paragraph.split(" ");
         for(String word : words){
-            String tmp = word.toLowerCase();
-            count.put(tmp,count.getOrDefault(tmp,0)+1);
+            count.put(word,count.getOrDefault(word,0)+1);
         }
         for(String word : banned){
             count.remove(word);
